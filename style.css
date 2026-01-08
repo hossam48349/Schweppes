@@ -1,0 +1,293 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  background-color: #FFF7CC;
+  color: #111111;
+
+  /* أهم تعديل: متمنعش السكرول + متستخدمش height ثابت */
+  min-height: 100vh;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+/* Nav */
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 25px 0;
+  gap: 20px;
+}
+
+nav ul {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap; /* مهم عشان اللينكات متكسرش على الشاشات الصغيرة */
+}
+
+nav ul a {
+  padding: 20px;
+  color: #111111;
+  font-weight: bold;
+}
+
+nav .logo {
+  width: 60px;
+}
+
+/* Content */
+#home .content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+
+  /* متستخدمش vh هنا عشان الموبايل */
+  padding: 2rem 0;
+}
+
+#home .content .image {
+  width: 400px;
+  max-width: 100%; /* مهم: يمنع خروج الصورة برا الشاشة */
+  height: auto;
+  animation: animation1 1s ease-in-out;
+}
+
+#home .content .con-text h1 {
+  font-size: 40px;
+  margin-bottom: 10px;
+  font-weight: 900;
+}
+
+#home .content .con-text span {
+  font-size: 70px;
+}
+
+#home .content .con-text p {
+  font-size: 20px;
+  max-width: 520px;  /* أفضل من width:60% عشان الموبايل */
+  margin: 20px 0;
+  line-height: 1.5;
+  color: #333333;
+}
+
+.btn {
+  display: inline-block;
+  padding: 15px 30px;
+  background-color: #FFB400;
+  color: #111111;
+  border-radius: 30px;
+  font-weight: bold;
+  transition: all 0.3s;
+}
+
+.btn:hover {
+  background-color: #d2a854;
+  color: #ffffff;
+}
+
+/* Social */
+.so {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  animation: animation1 2s ease-in-out;
+}
+
+.so i {
+  color: #292727; /* زي ما طلبت: أبيض */
+  font-size: 20px;
+  transition: all 0.3s ease;
+}
+
+.so i:hover {
+  color: #FFB400;
+  transform: scale(1.2);
+}
+
+/* Decoration */
+.decor1 {
+  display: block;
+  margin: 10px auto 30px;
+  width: 200px;
+  max-width: 100%;
+  animation: animation2 3s ease-out;
+}
+
+/* Animations */
+@keyframes animation1 {
+  0% {
+    transform: translateX(500px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes animation2 {
+  0% {
+    transform: translateY(500px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Tablet */
+@media (max-width: 900px) {
+  .container {
+    padding: 0 1rem; /* الأفضل بدل تغيير margin */
+  }
+
+  nav ul a {
+    padding: 10px;
+    font-size: 14px;
+  }
+
+  #home .content {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  #home .content .con-text p {
+    max-width: 100%;
+  }
+
+  #home .content .image {
+    width: 260px;
+  }
+
+  .so {
+    flex-direction: row; /* شكل لطيف للموبايل/تابلت */
+    justify-content: center;
+  }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  #home .content .con-text h1 {
+    font-size: 30px;
+  }
+
+  #home .content .con-text span {
+    font-size: 46px;
+  }
+
+  #home .content .con-text p {
+    font-size: 16px;
+  }
+
+  .btn {
+    padding: 12px 22px;
+  }
+}
+.footer {
+  background-color: #FFF3B0;
+  margin-top: 3rem;
+  font-size: 14px;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 3rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.footer-brand img {
+  width: 60px;
+  margin-bottom: 10px;
+}
+
+.footer-brand p {
+  max-width: 260px;
+  color: #333;
+  line-height: 1.5;
+}
+
+.footer-links h4,
+.footer-social h4 {
+  margin-bottom: 15px;
+  font-weight: 700;
+  color: #111;
+}
+
+.footer-links ul li {
+  margin-bottom: 10px;
+}
+
+.footer-links a {
+  color: #333;
+  transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+  color: #FFB400;
+}
+
+.social-icons {
+  display: flex;
+  gap: 15px;
+}
+
+.social-icons a {
+  color: #111;
+  font-size: 18px;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.social-icons a:hover {
+  color: #FFB400;
+  transform: scale(1.2);
+}
+
+.footer-bottom {
+  text-align: center;
+  padding: 15px 10px;
+  background-color: #FFE066;
+  color: #111;
+  font-size: 13px;
+}
+
+/* Responsive Footer */
+@media (max-width: 768px) {
+  .footer-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .footer-brand p {
+    margin: auto;
+  }
+
+  .social-icons {
+    justify-content: center;
+  }
+}
+
